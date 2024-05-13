@@ -1,0 +1,34 @@
+@{
+    var error = TempData["Error"];
+    var userNameOrEmail = TempData["UserNameOrEmail"];
+    var password = TempData["Password"];
+}
+
+<div class="row d-flex justify-content-center align-items-center">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Sign In</h2>
+                    <p>Please fill your information to login</p>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Auth" asp-asp-action="Login" method="post" autocomplete="off">
+                        <div class="form-group">
+                            <label>UserName Or Email</label>
+                            <input type="text" name="UserNameOrEmail" class="form-control" value="@userNameOrEmail">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label>Password</label>
+                        <input type="password" name="Password" class="form-control" value="@password">
+                        </div>
+                        <div class="form-group mt-2">
+                            <button type="submit" class="btn btn-warning w-100">Sign In</button>
+                        </div>
+                        <div class="form-group mt-2">
+                            <span class="text-danger">@TempData["Error"]</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>

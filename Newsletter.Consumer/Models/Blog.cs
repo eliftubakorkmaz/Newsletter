@@ -1,5 +1,4 @@
-﻿namespace Newsletter.Domain.Entities;
-
+﻿namespace Newsletter.Consumer.Models;
 public sealed class Blog
 {
     public Blog()
@@ -11,6 +10,7 @@ public sealed class Blog
     public string Title { get; set; } = string.Empty;
     public string Summary { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
-    public DateOnly? PublishDate { get; set; } 
+    public DateOnly? PublishDate { get; set; }
     public bool IsPublish { get; set; }
 }
+
